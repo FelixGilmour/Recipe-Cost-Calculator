@@ -1,5 +1,6 @@
 import time
 import random
+import sys
 
 #start
 name = "Felix Gilmour"
