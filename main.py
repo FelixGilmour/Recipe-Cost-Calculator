@@ -32,11 +32,23 @@ time.sleep(3)
 #main code
 print("Okay, now we can get started!")
 time.sleep(3)
-ingredient_sizing = input("How many ingredients are in your recipe:  ")
+
+#creating the database
+def create_recipe_table():
+  ingredient_sizing=int(input("How many ingredients are in your recipe:"))
+  #box
+  ingredients=[]
+  #i_sizing
+  for i in range(ingredient_sizing):
+    #amount, unit, name, price
+    amount=float(input(f"Enter Amount {i+1}:"))
+    unit=input(f"Enter Unit {i+1}:")
+    name=input(f"Enter name of the ingredient {i+1}:")
+    price=float(input(f"Enter in the price of the ingredient {i+1} (Per unit):"))
+
+    #add ingredients toi the database
+    
 
 
-#inputs
-
-#outputs
 
 #finish area
