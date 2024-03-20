@@ -22,9 +22,6 @@ time.sleep(3)
 
 #recipename
 recipename_input = input("What is your recipe's name that you are calculating the cost of:  ")
-time.sleep(1)
-servingsize_input = input("How many servings are in your recipe:  ")
-print(f"Great! So you want: {recipename_input} and a serving size of {servingsize_input} for the {recipename_input}!\n")
 
 #wait
 time.sleep(3)
@@ -46,8 +43,16 @@ def create_recipe_table():
     name=input(f"Enter name of the ingredient {i+1}:")
     price=float(input(f"Enter in the price of the ingredient {i+1} (Per unit):"))
 
-    #add ingredients toi the database
+    # database
     
+    #add ingredients to the database
+    ingredients.append((amount, unit, name, price))
+    #total cost, seving, cost-per-serving
+    total_cost=sum(amount*price for amount,_,_,price in ingredients)
+    servings=float(input("Enter your number of servings: "))
+    cost_per_serving=total_cost/servings
+
+    print(f"Great! So you want: {recipename_input} and a serving size of {servings} for the {recipename_input}!\n")
 
 
 
