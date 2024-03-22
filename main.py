@@ -43,10 +43,10 @@ def create_recipe_table():
   for i in range(ingredient_sizing):
     
     #collecting the amount, unit, name, price
-    name=input(f"Enter name of the ingredient {i+1}:")
-    price=float(input(f"Enter in the price of the ingredient {i+1} ($):"))
-    unit=input(f"Enter the ingredients unit {i+1}:")
-    amount=float(input(f"Enter the amount using {i+1}:"))
+    name=input("Enter name of the ingredient:")
+    price=float(input("Enter in the price of the ingredient ($):"))
+    unit=input("Enter the ingredients unit g/Kg e.g - g for grams:")
+    amount=float(input("Enter the amount that you are using e.g 30 for 30g:"))
 
     #add ingredients to the database
     ingredients.append((amount, unit, name, price))
@@ -56,13 +56,13 @@ def create_recipe_table():
     servings=float(input("Enter your number of servings: "))
     cost_per_serving=total_cost/servings
 
-    print(f"Great! So you want: {recipename_input} and a serving size of {servings} for the {recipename_input}!\n")
+    print(f"Great! So you want: {recipename_input} and a serving size of {servings} people for the {recipename_input}!\n")
 
     #table/s showing on code
     print("Here is your recipe:")
     
     #print ingredients
-    print("/nRecipie Ingredients")
+    print("Recipie Ingredients")
     
     #asked ai for help with this part - is supposed to format the table correctly so the user can see it
     print("{:<10} {:<10} {:<15} {:<15}".format("Amount", "Unit", "Name", "Price"))
@@ -70,30 +70,11 @@ def create_recipe_table():
       #{.2f} is showng the string floating number
       print("{:<10} {:<10} {:<15} {:<15.2f}".format(amount, unit, name, price))
       
-    #
-    print("")
-    #
-    print("")
-
-
-    #
+    #prints total cost
+    print("\nTotal Cost: ${:.2f}".format(total_cost))
     
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #prints cost per serving
+    print("Cost Per Serve: ${:.2f}".format(cost_per_serving))
 
 #finish/start
 create_recipe_table()
