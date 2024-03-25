@@ -24,7 +24,7 @@ print(f"Welcome {name_input} to my Recipe Cost Calculator!\n")
 time.sleep(3)
 
 #recipename
-recipename_input = input("What is your recipe's name that you are calculating the cost of:  ")
+recipe_name = input("What is your recipe's name that you are calculating the cost of:  ")
 
 #wait
 time.sleep(3)
@@ -35,42 +35,55 @@ time.sleep(3)
 
 #creating the database and looping the code
 def create_recipe_table():
-  ingredient_sizing=int(input("How many ingredients are in your recipe:"))
+  ingredient_count=int(input("How many ingredients are in your recipe:"))
   #box
   ingredients=[]
   
   #i_sizing
-  for i in range(ingredient_sizing):
+  for i in range(ingredient_count):
     
     #collecting the amount, unit, name, price
-    name=input("Enter name of the ingredient:")
-    price=float(input("Enter in the price of the ingredient ($):"))
-    unit=input("Enter the ingredients unit g/Kg e.g - g for grams:")
-    amount=float(input("Enter the amount that you are using e.g 30 for 30g:"))
+   
+    print(f"\nEntering ingredient {i+1} details:  ")
+    name=input("Enter name of the ingredient:  ")
+    price=float(input("Enter in the price of the ingredient ($):  "))
+    unit=input("Enter the ingredients unit g/Kg e.g - g for grams:  ")
+    amount=float(input("Enter the amount that you need:  "))
 
     #add ingredients to the database
     ingredients.append((amount, unit, name, price))
     
-    #found on a website idk how it works
-    total_cost=sum(amount*price for amount,_,_,price in ingredients)
-    servings=float(input("Enter your number of servings: "))
-    cost_per_serving=total_cost/servings
-    
-    #prints what they want
-    print(f"Great! So you want: {recipename_input} and a serving size of {servings} people for the {recipename_input}!\n")
+    #caculating the number of servings wanted
+    serving = float(input("\n Enter the number of servings that you want:  "))
 
-    #table/s showing on code
-    print("Here is your recipe:")
+    #prints what they want
+    print(f"Great! So you want: {recipe_name} and a serving size of {serving} people for the {recipe_name}!\n")
+
+
+    #caculate the total cost
+    total_cost = 
+
+    #caculate the total cost per serving
+    cost_per_serving = total_cost / serving
     
-    #print ingredients
-    print("Recipie Ingredients")
+    #asked ai and a online website for help with this part - is supposed to format the output correctly
+
+
+
+
+
     
-    #asked ai for help with this part - is supposed to format the table correctly so the user can see it
     print("{:<10} {:<10} {:<15} {:<15}".format("Amount", "Unit", "Name", "Price"))
     for amount, unit, name, price in ingredients:
-      #{.2f} is showng the string floating number
+    
       print("{:<10} {:<10} {:<15} {:<15.2f}".format(amount, unit, name, price))
-      
+
+
+
+
+
+
+    
     #prints total cost
     print("\nTotal Cost: ${:.2f}".format(total_cost))
     
