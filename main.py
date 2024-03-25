@@ -55,7 +55,8 @@ def create_recipe_table():
     total_cost=sum(amount*price for amount,_,_,price in ingredients)
     servings=float(input("Enter your number of servings: "))
     cost_per_serving=total_cost/servings
-
+    
+    #prints what they want
     print(f"Great! So you want: {recipename_input} and a serving size of {servings} people for the {recipename_input}!\n")
 
     #table/s showing on code
