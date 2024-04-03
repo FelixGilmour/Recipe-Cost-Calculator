@@ -39,18 +39,19 @@ def create_recipe_table():
   ingredient_count = int(input("\nHow many ingredients are in your recipe: "))
 
   #collecting inputs
-  for i in range(ingredient_count):
+  for i in range(ingredient_count): 
+        
       #Recipe Ingredients
       print(f"\nEntering ingredient {i+1} details:")
       print("Recipe Ingredients")
-      amount_needed1 = float(input("Enter the recipe ingredient's, amount that you need: "))
+      amount_needed1 = float(input("Enter the recipe ingredient's, amount that you need number only: "))
       unit1 = input("Enter the recipe ingredient's unit (g/kg): ")
       name1 = input("Enter the name of the recipe ingredient: ")
 
       #Ingredient Prices
       print("Ingredient Prices")
-      price_per_unit2 = float(input("Enter the price per unit of the ingredient price ($): "))
-      amount_needed2 = float(input("Enter the ingredient prices, amount that you need: "))
+      price_per_unit2 = float(input("Enter the price per unit of the ingredient price number only ($): "))
+      amount_needed2 = float(input("Enter the ingredient prices, amount that you need number only: "))
       unit2 = input("Enter the ingredient prices unit (g/kg): ")
       print("We will now add this to the date base and caculate the cost to make, the total cost and cost per serve!")
 
