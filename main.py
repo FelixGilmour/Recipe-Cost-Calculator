@@ -38,16 +38,6 @@ print(f"Welcome {name_input} to my Recipe Cost Calculator!\n")
 #wait
 time.sleep(3)
 
-#recipename
-while True:
-  try:
-     recipe_name = input("What is your recipe's name that you are calculating the cost of:  ")
-  except ValueError:
-    print("Please enter a valid name")
-    break
-
-#wait
-time.sleep(3)
 
 #main code
 print("Okay, now we can get started!")
@@ -63,6 +53,8 @@ def create_recipe_table():
        ingredient_count = int(input("\033[1;34;40m \nHow many ingredients are in your recipe: "))
     except ValueError:
       print("Please enter a valid number")
+      continue
+    else:
       break
  
 
@@ -120,7 +112,9 @@ def create_recipe_table():
          continue
        
       #printting data base results
+      time.sleep(3)
       print("We will now add this to the date base and caculate the cost to make, the total cost and cost per serve!")
+      time.sleep(3)
       
   
       #converting the amounts as needed
@@ -142,6 +136,19 @@ def create_recipe_table():
       ingredients.append((amount_needed1, unit1, name1, price_per_unit2, amount_needed2, unit2))
       break
 
+  #recipename
+  while True:
+    try:
+       recipe_name = input("What is your recipe's name that you are calculating the cost of:  ")
+    except ValueError:
+      print("Please enter a valid name")
+      continue
+    else:
+     break
+
+  #wait
+  time.sleep(3)
+  
   #servings
   serving = float(input("\nEnter the number of servings you want: "))
   print(f"Great! So you want: {recipe_name} and {serving} servings!\n")
