@@ -150,7 +150,16 @@ def create_recipe_table():
   time.sleep(3)
   
   #servings
-  serving = float(input("\nEnter the number of servings you want: "))
+  while True:
+    try:
+     serving = float(input("\nEnter the number of servings you want: "))
+    except ValueError:
+      print("Please enter a valid number")
+      continue
+    else:
+     break
+      
+  time.sleep(3)
   print(f"Great! So you want: {recipe_name} and {serving} servings!\n")
 
   #Calculate total cost
@@ -175,9 +184,10 @@ def create_recipe_table():
 
   #prints Ingredient Price
   print("Ingredient Price:")
-  print(f"{'Price':<10} {'Amount':<10} {'Unit':<20}")
-  for price_per_unit2, amount_needed2, unit2, _ , _, _ in ingredients:
+  print(f"{'Price':<10} {'Amount':<10} {'Unit':<10}")
+  for _, _, _, price_per_unit2, amount_needed2, unit2 in ingredients:
       print(f"{sep1} {price_per_unit2:<10} {amount_needed2:<10} {unit2:<10}")
+
     
   #prints total cost
   print(f"\nTotal: ${total_cost:.2f}")
