@@ -172,7 +172,6 @@ def create_recipe_table():
   sep1 = '💵'
   sep2 = '📝'
   
-
   #data
   print(f"\nRecipe: {recipe_name}")
   print(f"\nServings: {serving}")
