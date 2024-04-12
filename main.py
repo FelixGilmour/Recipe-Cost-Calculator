@@ -6,7 +6,7 @@ school = "James Hargest College"
 course = "Programming Evidence Internal for 2.7 and 2.8 ~ 12 credits"
 due_date = "Due: 12 April 2024"
 
-# /n representing new lines
+# /n representing breaking new lines
 print(f"\033[4;31;40m Name: {name}\n"
       f"{school}\n"
       f"{course}\n"
@@ -15,12 +15,14 @@ time.sleep(1)
 
 # age verification
 is_age_verified = True
+#while true changed format to while is_age_verified:
 while is_age_verified:
     print("\033[0;30;47m This is designed for people aged between 13 and 18 years old")
     age_input = input("Please enter your age: ")
     if not age_input.isdigit():
         print("Please enter a valid age")
     else:
+      #if age lower or older then prints invalid age
         age = int(age_input)
         if age < 13:
             print("You are too young to use this program")
@@ -32,6 +34,8 @@ while is_age_verified:
 
 # enter name
 name_input = input("\033[4;31;40m Enter your name: ")
+
+#prints name
 print(f"Welcome {name_input} to my Recipe Cost Calculator!\n")
 
 # wait
@@ -48,8 +52,10 @@ def create_recipe_table():
     ingredient_cost = []
     while True:
         try:
+          #asks for ingredients count
             ingredient_count = int(input("\033[1;34;40m \nHow many ingredients are in your recipe: "))
         except ValueError:
+          #prints invalid input
             print("Please enter a valid number")
             continue
         else:
@@ -108,7 +114,7 @@ def create_recipe_table():
                 amount_needed_kg1 = amount_needed1 / 1000
             else:
                 amount_needed_kg1 = amount_needed1
-
+#if unit 1~or 2 is not in kg and in g converting to g to pput into the final output
             if unit2.lower() == 'g':
                 amount_needed_kg2 = amount_needed2 / 1000
             else:
@@ -126,7 +132,7 @@ def create_recipe_table():
     # wait
     time.sleep(3)
 
-    # servings
+    # asking for serving count and dening continuing if a word
     while True:
         try:
             serving = float(input("\nEnter the number of servings you want: "))
@@ -135,7 +141,8 @@ def create_recipe_table():
             continue
         else:
             break
-
+          
+#confirming what the user wants
     time.sleep(3)
     print(f"Great! So you want: {recipe_name} and {serving} servings!\n")
 
@@ -149,9 +156,10 @@ def create_recipe_table():
     sep1 = '💵'
     sep2 = '📝'
 
-    # data
+    # data printed
     print(f"\nRecipe: {recipe_name}")
     print(f"\nServings: {serving}")
+  
     # prints Recipe Ingredients
     print("Recipe Ingredients:")
     print(f"{'Amount':<10} {'Unit':<10} {'Ingredient':<20}")
@@ -168,5 +176,17 @@ def create_recipe_table():
     print(f"\nTotal: ${total_cost:.2f}")
     print(f"Per Serve: ${cost_per_serving:.2f}")
 
+
+    time.sleep(10)
+
+    #play again
+    playagain = input("Do you want to play again, yes or no?>>  ")
+    if playagain.lower() == 'yes':
+      #f allow name to be printed in the code
+      print(f"Nah, you can't play again {name_input}!")
+  
+    else:
+      print("See ya later, loser")
+  
 # Start the program
 create_recipe_table()
